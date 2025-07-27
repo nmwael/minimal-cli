@@ -15,6 +15,13 @@ class HelloCommand : Runnable {
     )
     lateinit var name: String
 
+    @CommandLine.Option(
+        arity = "0",
+        description = ["Output in all-capitals"],
+        names = ["-c", "--capitals"]
+    )
+    var capitals: Boolean = false
+
     override fun run() {
         log.info("Hello, $name!")
     }
